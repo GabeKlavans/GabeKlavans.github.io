@@ -18,16 +18,16 @@ avatar: https://avatars3.githubusercontent.com/u/32149200?s=460&v=4
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
-  facebook:
+  email: gabeklav@bu.edu
+  facebook: gabriel.klavans
   flickr:
-  github: https://github.com/gabeklavans
+  github: gabeklavans
   instagram:
-  linkedin:
+  linkedin: gabrielklavans
   pinterest:
   rss: # just type anything here for a working RSS icon
   twitter: 
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  stackoverflow: users/10247638/dabe
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # lol
 
