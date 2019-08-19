@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Test post please ignore
-comments: true
 ---
 
 Is this thing on?
