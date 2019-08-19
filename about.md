@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Currently either coding, playing video games, or playing percussion
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Vegan, lefty, right-handed
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[gabeklav at bu dot edu](mailto:gabeklav@bu.edu)
