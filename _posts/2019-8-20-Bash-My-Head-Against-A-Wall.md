@@ -13,7 +13,7 @@ By default, giving someone access to a user on a Linux server is as simple as pa
 ![I'm in](https://thumbs.gfycat.com/LightheartedObviousBlowfish-size_restricted.gif)  
 *I'm in*.
 
-Well I was *not* in. There was no `.ssh` folder in my user's home directory. Odd. Creating an `authorized_keys` file didn't work. Using the `find` command I found the `authorized_keys` file, except it was a directory and it was in `/etc/ssh`. Turns out this is where config for key auth is, and the admin moved all the keys into an `authorized_keys` folder, each user having their own key file in the folder, changed the configured logic for searching for keys (specifically, to `/etc/ssh/authorized_keys/%u`, which was pretty cool) and just *forgot* about it. No sweat though, I learned a lot about key auth. Putting my key in my respective user file allowed me to be  
+Well I was *not* in. There was no `.ssh` folder in my user's home directory. Odd. Creating an `authorized_keys` file didn't work. Using the `find` command I found the `authorized_keys` file, except it was a directory and it was in `/etc/ssh`. Turns out this is where config for key auth is. The admin moved all the keys into an `authorized_keys` folder, gave each user their own key file in the folder, changed the logic in `sshd_config` for searching for keys (specifically, to `/etc/ssh/authorized_keys/%u`, which was pretty cool) and just *forgot* about it. No sweat though, I learned a lot about key auth. Putting my key in my respective user file allowed me to be  
 ![I'm actually in](https://thumbs.gfycat.com/LightheartedObviousBlowfish-size_restricted.gif)  
 *actually in*.
 
