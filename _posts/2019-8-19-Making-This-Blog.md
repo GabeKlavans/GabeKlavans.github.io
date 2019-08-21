@@ -3,7 +3,7 @@ layout: post
 title: Making This Blog
 ---
 
-#### TL;DR Follow [this guide](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/ "This Guy'd") to get a free blog going in almost no time
+#### TL;DR: Follow my journey through all the components of a basic blog, or just go straight to [the guide](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/ "This Guy'd") that I ended up using
 
 So my first post will be the process I went through to get this blog up and running.
 
