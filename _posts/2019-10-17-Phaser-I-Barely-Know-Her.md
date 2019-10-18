@@ -5,14 +5,14 @@ title: Phaser? I Barely Know Her!
 
 #### Making a video game can't be THAT hard
 
-A couple months ago my room mate and I decided to make a game a side project. I had already been working on a [Tamagotchi clone](https://github.com/gabeklavans/Tamanotchi "Tamanotchi") webapp, so I was ready to put my newfound Node.js/JavaScript skills to the test.
+A couple months ago my room mate and I decided to make a [game](https://github.com/tsbraun1891/GARP.io "GARP.io") a side project. I had already been working on a [Tamagotchi clone](https://github.com/gabeklavans/Tamanotchi "Tamanotchi") web app, so I was ready to put my newfound Node.js/JavaScript skills to the test.
 
 After doing some research on how to actually start this process, we decided we did NOT want to code our own engine from scratch, even if our concept was relatively simple by design. I made the Tamanotchi using [Phaser](https://phaser.io/ "Phaser.io"), a free JavaScript-based engine for running games in the browser. We also decided to use Phaser 2 instead of 3, as 2 had more documentation and seemed to be more feature-rich (3 was still work in progress essentially). Now that we had a starting point, it was time to [delve](https://phaser.io/tutorials/making-your-first-phaser-2-game "Official Phaser 2 Tutorial") into [tutorials](https://gamedevacademy.org/create-a-basic-multiplayer-game-in-phaser-3-with-socket-io-part-1/ "Simple Multiplayer Tutorial") and [examples](https://www.dynetisgames.com/2017/03/06/how-to-make-a-multiplayer-online-game-with-phaser-socket-io-and-node-js/ "MMO In Phaser") to model our code after.
 
 ### Servin' It Up
 
 ![Servin it up](https://media.giphy.com/media/3ohuPpJFjnXeaNwG6k/giphy.gif)  
-A lot of tutorials pointed us in the direction of coupling our client-side code in with the server code. This is fine since it's a single-page webapp. We set up the server in Node.js using [Express.js](https://expressjs.com/ "Express"). When the user visits whatever site the server is hosted on, we use Express to serve the client-side HTML that contains calls to all the JS written for the game.
+A lot of tutorials pointed us in the direction of coupling our client-side code in with the server code. This is fine since it's a single-page web app. We set up the server in Node.js using [Express.js](https://expressjs.com/ "Express"). When the user visits whatever site the server is hosted on, we use Express to serve the client-side HTML that contains calls to all the JS written for the game.
 
 ## WebSockets
 
@@ -35,3 +35,4 @@ The tip of this iceberg for me was a Phaser Multiplayer tutorial that sent infor
 
 ### Server-Authoritative Tick-Based Architecture
 
+This is the architecture we have landed on for continuing the development of the game, for the time being. A key concept that I had missed was the fact client-authoritative structures enable cheating from the client side and can make synchronization fairly complex. The solution is to run the game loop on the server and have each client running a parallel loop solely for predicting what will happen on the server based on the inputs sent by the player. Ultimately, the server will be the authority on what is going on in the game, and the changes to the state will be sent on a tick to *everybody*. HOW exactly we are going to implement this... that's a story for another blog post (more accurately, a post made after we actually have it figured out...)
