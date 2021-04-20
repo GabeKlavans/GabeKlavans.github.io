@@ -8,83 +8,83 @@ title: Godot Continuous Deployment from GitHub to Itch.io
 For context, Tanner and I have been working on a 2D game using [Godot](https://godotengine.org/), a game engine that is just a pleasure to work in.
 
 ## TL;DR: Here's the [workflow file](https://github.com/SuGar33-Coding/The-Grand-Battle-Arena/blob/working/.github/workflows/deploy_game.yml)
-```
-# Whenever a push is made to the branch then run the job
-on: 
-  push:
-    branches:
-      - main # Replace with whatever branch you want
 
-env:
-  GODOT_VERSION: 3.2.3 # Replace with your version
-  EXPORT_NAME: game-name
+    # Whenever a push is made to the branch then run the job
+    on: 
+      push:
+        branches:
+          - main # Replace with whatever branch you want
 
-jobs:
-  export-windows:
-    name: Windows
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:mono-3.2.3
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
-      - name: Windows Build
-        run: |
-          mkdir -v -p build/windows
-          godot -v --export "Windows" ./build/windows/$EXPORT_NAME.exe
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: windows
-          path: build/windows
-      - name: Upload to Itch.io
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: windows
-          ITCH_GAME: game-name # Name of your game on Itch.io
-          ITCH_USER: itch-user # Your Itch.io account name
-          PACKAGE: build/windows
-          
-  export-html5:
-    name: HTML5
-    runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:mono-3.2.3
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
-      - name: HTML5 Build
-        run: |
-          mkdir -v -p build/html5
-          godot -v --export "HTML5" ./build/html5/index.html
-        # cd $EXPORT_NAME
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: html5
-          path: build/html5
-      - name: Upload to Itch.io
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: html5
-          ITCH_GAME: game-name # Name of your game on Itch.io
-          ITCH_USER: itch-user # Your Itch.io account name
-          PACKAGE: build/html5
-```
+    env:
+      GODOT_VERSION: 3.2.3 # Replace with your version
+      EXPORT_NAME: game-name
+
+    jobs:
+      export-windows:
+        name: Windows
+        runs-on: ubuntu-latest
+        container:
+          image: barichello/godot-ci:mono-3.2.3
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+            with:
+              lfs: true
+          - name: Setup
+            run: |
+              mkdir -v -p ~/.local/share/godot/templates
+              mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
+          - name: Windows Build
+            run: |
+              mkdir -v -p build/windows
+              godot -v --export "Windows" ./build/windows/$EXPORT_NAME.exe
+          - name: Upload Artifact
+            uses: actions/upload-artifact@v1
+            with:
+              name: windows
+              path: build/windows
+          - name: Upload to Itch.io
+            uses: josephbmanley/butler-publish-itchio-action@master
+            env:
+              BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+              CHANNEL: windows
+              ITCH_GAME: game-name # Name of your game on Itch.io
+              ITCH_USER: itch-user # Your Itch.io account name
+              PACKAGE: build/windows
+              
+      export-html5:
+        name: HTML5
+        runs-on: ubuntu-latest
+        container:
+          image: barichello/godot-ci:mono-3.2.3
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+            with:
+              lfs: true
+          - name: Setup
+            run: |
+              mkdir -v -p ~/.local/share/godot/templates
+              mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
+          - name: HTML5 Build
+            run: |
+              mkdir -v -p build/html5
+              godot -v --export "HTML5" ./build/html5/index.html
+            # cd $EXPORT_NAME
+          - name: Upload Artifact
+            uses: actions/upload-artifact@v1
+            with:
+              name: html5
+              path: build/html5
+          - name: Upload to Itch.io
+            uses: josephbmanley/butler-publish-itchio-action@master
+            env:
+              BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+              CHANNEL: html5
+              ITCH_GAME: game-name # Name of your game on Itch.io
+              ITCH_USER: itch-user # Your Itch.io account name
+              PACKAGE: build/html5
+
 Some important steps to get this working:
 1. You have to use butler to [push a build to a channel](https://itch.io/docs/butler/pushing.html) before the automatic Itch.io upload will work. Make sure to use the channel name set in the workflow.
 2. You need to add BUTLER_CREDENTIALS containing an [API key from your account](https://itch.io/user/settings/api-keys) to your repository secrets (Repo $\rightarrow$ Settings $\rightarrow$ Secrets)
