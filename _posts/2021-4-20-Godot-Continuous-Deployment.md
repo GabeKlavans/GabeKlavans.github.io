@@ -10,14 +10,14 @@ For context, Tanner and I have been working on a 2D game using [Godot](https://g
 ## TL;DR: Here's the [workflow file](https://github.com/SuGar33-Coding/The-Grand-Battle-Arena/blob/1fc2de6ec0d3021f1183e49894a1164e4f1d6c55/.github/workflows/deploy_game.yml)
 
 Some important steps to get this working:
-1. You have to use butler to [push a build to a channel](https://itch.io/docs/butler/pushing.html) before the automatic Itch.io upload will work. Make sure to use the channel name set in the workflow.
-2. You need to add BUTLER_CREDENTIALS containing an [API key from your account](https://itch.io/user/settings/api-keys) to your repository secrets (Repo $\rightarrow$ Settings $\rightarrow$ Secrets)
-3. Of course, you have to replace all the game-specific fields such as
-   1. ITCH_GAME should be the name of your game that's published on Itch.io
-   2. ITCH_USER should be your Itch.io username
-   3. EXPORT_NAME can just also be the (file-safe) name of your game
-   4. The branch to look for probably won't be `working` and instead something like `main`
-   5. Make sure to replace the GODOT_VERSION with your proper version and to remove `mono-` and `.mono` if you're using non-mono Godot
+- You have to use butler to [push a build to a channel](https://itch.io/docs/butler/pushing.html) before the automatic Itch.io upload will work. Make sure to use the channel name set in the workflow.
+- You need to add BUTLER_CREDENTIALS containing an [API key from your account](https://itch.io/user/settings/api-keys) to your repository secrets (Repo $\rightarrow$ Settings $\rightarrow$ Secrets)
+- Of course, you have to replace all the game-specific fields such as
+   - ITCH_GAME should be the name of your game that's published on Itch.io
+   - ITCH_USER should be your Itch.io username
+   - EXPORT_NAME can just also be the (file-safe) name of your game
+   - The branch to look for probably won't be `working` and instead something like `main`
+   - Make sure to replace the GODOT_VERSION with your proper version and to remove `mono-` and `.mono` if you're using non-mono Godot
 
 Throw that code into a workflow file in your repo and replace the necessary fields to get up and running quick! 
 This particular setup is for exporting and uploading a Windows build for download and an HTML5 build for running in the game's Itch.io page (which may not be exactly optimal depending on the kind of game you're making).
