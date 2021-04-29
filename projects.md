@@ -5,6 +5,9 @@ permalink: /projects/
 ---
 that I have completed or am working on
 
+## [Pitch Detection Directed Study](https://github.com/gabeklavans/computational-audio)
+Took a directed study in computational audio with Prof. Wayne Snyder at BU. We mainly focused on different algorithms for fundamental frequency detection in python, such as YIN and Cepstral Analysis. We compared performance, ease of implementation, and usage caveats for each.
+
 ## [Numpadulator](https://github.com/gabeklavans/Numpadulator)
 Fully custom QMK-powered mechanical numpad with embedded 4-func calculator. PCB designed in KiCad and case designed in Fusion360. \[WIP\]
 
