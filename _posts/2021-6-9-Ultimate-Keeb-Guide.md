@@ -19,6 +19,10 @@ Buckle up, cause it's a long one.
 - [Design Phase](#design-phase)
 - [Build Phase](#build-phase)
   - [Fabrication](#fabrication)
+    - [Case](#case)
+    - [Switch Plate](#switch-plate)
+    - [Electrical components](#electrical-components)
+      - [LEDs](#leds)
   - [Assembly](#assembly)
     - [Tools](#tools)
 
@@ -79,6 +83,36 @@ Great. Now we have everything designed and ready to fabricate, assemble, and use
 I lied. I don't think it'll work perfectly on the first try. It's actually very normal to have hiccups/oversights for these kinds of things. Your willingness to burn money should dictate how thorough you were in the design phase, as it will cost a lot more to re-fabricate everything for a new design than it will to replace a couple messed up components. If you're very careful and thoughtful, you may be able to scrape by with only a couple minor, mitigable mistakes.
 
 ## Fabrication
+Now lets step through all the stuff you'll have to get fabricated for the keeb.
+
+### Case
+How you get your case made will depend widely on the complexity of your design. My numpad involved a couple layers of relatively simple rectangles with cutouts for things like screws, so I was able to get the thinner layers (of brass and acrylic) plasma/laser cut. The top part of my case had some filleted corners, so I just 3D printed it, but I could've had a block CNC milled to get something more solid, as I could've removed the fillets and made the geometry pretty simple.
+The services you use to produce the case can also widely vary. For example, I have a nice 3D printer in my apartment thanks to living with a mechanical engineer. This was GREAT for prototyping parts, and I highly recommend you get cheap or easy access to one for that reason.
+
+### Switch Plate
+This is gonna be a 1.5mm $\pm$ 0.1mm sheet, likely laser, plasma, or water-jet cut. This part is usually pretty straight forward and cheap to make, as you can take a flattened drawing format of your switch plate design and throw it into a fabrication service.
+
+Common materials to make a switch plate out of, in order of most to least common, are:
+ 1. Aluminum
+    - Cheap, tried and true
+ 2. Brass
+    - People say it offers a deeper, richer bottom out sound and feel
+    - A bit more expensive than alu
+ 3. Polycarbonate
+    - A softer bottom out feel with more give in the board
+    - Can be better for diffusing RGB backlighting
+
+From my research of companies that ship to the US, I found that these two were the cheapest and fastest services (I used them both)
+ - [Ponoko](https://www.ponoko.com/)
+ - [SendCutSend](https://sendcutsend.com/)
+
+[Here's a post](https://www.keebtalk.com/t/list-of-laser-cutting-services/2500) that accumulates a bunch of services, if you wanna do your own comparison.
+
+### Electrical components
+This is pretty much a free-for-all. There are some more maker-friendly sites like [Sparkfun](https://www.sparkfun.com/) or [Adafruit](https://www.adafruit.com/), there are some bulk-ordering sites like [Mouser](https://www.mouser.com/) or [Digi-Key](https://www.digikey.com/) that will offer better pricing and wider selection, or you can just order real cheap from AliExpress. They'll pretty much all deliver serviceable components, so it's up to you to make sure you're getting the right parts and for a price/shipping window that you're comfortable with.
+
+#### LEDs
+Make note that WD2812, SK6812, and Adafruit NeoPixels all use the same drivers, so they will all work as intelligent per-key RGB LEDs in QMK. All their variants should also work, just make sure to double-check your choice's package wiring guide to make sure it's physically compatible with your PCB design.
 
 ## Assembly
 Now that parts are arriving you can start to put them together.
