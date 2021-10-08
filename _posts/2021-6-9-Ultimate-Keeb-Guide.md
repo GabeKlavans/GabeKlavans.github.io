@@ -12,7 +12,12 @@ Buckle up, cause it's a long one.
 # *Add a TOC*
 
 # Planning Phase
+## Layout
+First step is to decide the layout you want. If you haven't thought about it enough yet, Keyboard University has a [great guide](https://keyboard.university/guides/what-size-mechanical-keyboard-should-i-get-g7dbr) for exploring the different common sizes and keyboard layouts. There are also unorthadox layouts like [the split keeb](https://kinesis-ergo.com/split-keyboards/) and [ortho linear](https://www.mechkeybs.com/learn/ortholinear-keyboards-guide/).
 
+![A handy chart](/images/layouts.png "Keyboard layout decision chart")
+
+But that's baby stuff. You're making your own keybaord from scratch. So these common layouts are merely suggestions. Granted, they're very good suggestions. But if you've got just a little tweak for any of these to make your idea layout, then that's what you'll want to do.
 # Design Phase
 
 # Build Phase
