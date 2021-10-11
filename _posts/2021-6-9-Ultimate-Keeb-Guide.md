@@ -17,10 +17,14 @@ Buckle up, cause it's a long one.
   - [Keycaps](#keycaps)
   - [Switches](#switches)
 - [Design Phase](#design-phase)
+  - [Layout](#layout-1)
+  - [Switch Plate](#switch-plate)
+  - [PCB](#pcb)
+    - [Read this Guide](#read-this-guide)
 - [Build Phase](#build-phase)
   - [Fabrication](#fabrication)
     - [Case](#case)
-    - [Switch Plate](#switch-plate)
+    - [Switch Plate](#switch-plate-1)
     - [Electrical components](#electrical-components)
       - [LEDs](#leds)
   - [Assembly](#assembly)
@@ -75,6 +79,30 @@ To note, you'll see people comparing switches to other switches a lot to describ
 
 # Design Phase
 So, you've done a lot of research and thought a lot about what exactly it is that you want to build. Now it's time to start making stuff.
+
+The design will basically be split up into 3 parts: the key switch plate, the PCB, and the case.
+
+## Layout
+But before we design the parts, we will want to nail down the layout of the keeb.
+
+You'll wanna start [here](http://www.keyboard-layout-editor.com/). This is an invaluable tool for designing the perfect layout for your keyboard. It also provides a nice interface for visualizing the keeb and sharing it with others.
+
+Another reason this tool is so useful is that it outputs your layout in a fairly standardized "raw data" format that defines your exact layout in a JSON object that can be imported into other tools (we will utilize this later).
+
+Lay out your layout and save the design or the raw data somewhere for later.
+
+## Switch Plate
+The flow I used to *maximize efficiency* is to design/generate the plate then design the case around it and the PCB in the image of it. So we'll start with the plate.
+
+First you'll want to generate a plate using the keyboard data from your layout.
+
+ai03 hosts a [really simple and clean generator](https://kbplate.ai03.com/) that will get you a nice .dxf with your plate. If you want more control over the output with more file formats (I recommend .dxf anyway, it maintains more information and plays nicely with CAD software) and a sandwich-style case generator (we'll talk about that case style later), check out [the swillkb generator](http://builder.swillkb.com/).
+
+## PCB
+
+
+### Read this Guide
+by ai03. It's really good.
 
 # Build Phase
 
