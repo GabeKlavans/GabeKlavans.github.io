@@ -123,7 +123,7 @@ Now, there are a lot of best practices in that guide that you should follow, and
 
 ### Chip Selection
 
-A large portion of my learning for this phase was around getting a [MCU](## "Microcontroller Unit") onto the PCB and functioning properly. This involves placing lots of supporting electronics around the board to make sure things work well and stay working well, as well as opening up interfacing with peripherals like USB. This is very interesting and it is quite satisfying to have everything soldered directly onto the board PCB.
+A large portion of my learning for this phase was around getting a [MCU](https://en.wikipedia.org/wiki/Microcontroller "Microcontroller Unit") onto the PCB and functioning properly. This involves placing lots of supporting electronics around the board to make sure things work well and stay working well, as well as opening up interfacing with peripherals like USB. This is very interesting and it is quite satisfying to have everything soldered directly onto the board PCB.
 
 The most common MCU keyboard makers go with is the ATMega32U4. This is somewhat for legacy reasons, and it is simply a cost effective chip that has been the most thoroughly tested in the keyboard community. If you want more processing speed or, more importantly, more on-board storage, STM makes a lot of nice and inexpensive MCUs. In general, you will want to go with some ARM based chip (many manufacturers like STM, NXP, etc. make ARM-based chips), especially for battery-powered keebs.
 
@@ -190,7 +190,7 @@ You will need a variety of tools for this kind of work. However, not everyone wi
 
 Here are some things you'll definitely want to consider:
 
-- [TH](## "Through hole") vs [SMD](## "Solder Mount Device") design
+- [THT](https://en.wikipedia.org/wiki/Through-hole_technology "Through Hole Technology") vs [SMD](https://en.wikipedia.org/wiki/Surface-mount_technology "Solder Mount Device") design
   - If you are using all TH components, you will probably get by with just a soldering iron kit
   - If you have some or all SMD components, as I did, then you are DEFINITELY going to want to get a hot air station, like [this one](https://www.amazon.com/YIHUA-959D-Digital-Efficiency-212%C2%B0F-932%C2%B0F-Iron-burn/dp/B08BK3M6YW/), and some [solder paste](https://www.amazon.com/MG-Chemicals-Leaded-Solder-Paste/dp/B00TIC895Y)
     - Using these, you can place down paste where you want to solder on components, affix the component in place, and melt down the solder paste with hot air
