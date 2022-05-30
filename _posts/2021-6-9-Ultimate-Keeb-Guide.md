@@ -111,7 +111,7 @@ ai03 hosts a [really simple and clean generator](https://kbplate.ai03.com/) that
 
 ## PCB
 
-### Read this Guide
+### [Read this Guide](https://wiki.ai03.com/books/pcb-design/chapter/pcb-designer-guide)
 
 by ai03. It's really good.
 
