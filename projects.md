@@ -5,6 +5,9 @@ permalink: /projects/
 ---
 that I have completed or am working on
 
+## [GameJay](https://github.com/gabeklavans/gamejay-bot)
+A fully web-based suite of mini-games designed to be played in [Telegram](https://telegram.org/) groupchats. Heavily inspired by GamePigeon for iOS.
+
 ## [Pitch Detection Directed Study](https://github.com/gabeklavans/computational-audio)
 Took a directed study in computational audio with Prof. Wayne Snyder at BU. We mainly focused on different algorithms for fundamental frequency detection in python, such as YIN and Cepstral Analysis. We compared performance, ease of implementation, and usage caveats for each.
 
