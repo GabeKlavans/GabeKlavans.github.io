@@ -12,4 +12,4 @@ Vegan, lefty, right-handed
 
 ### Contact me
 
-[gabeklav at bu dot edu](mailto:gabeklav@bu.edu)
+[gabeklav at fastmail dot com](mailto:gabeklav@fastmail.com)
